@@ -1,19 +1,21 @@
 {
   "name": "mini-enevntbrite-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este es un proyecto dedicado al uso ludico, para la creacion de una billtera para eventos",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec node src/server.js",
+    "start": "node src/server.js", 
+    "build": "echo 'No build step needed for Node ESM"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/carocervera123/mini-enevntbrite-backend.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["express", "nodemon", "JWT", "Token", "Server"],
+  "author": "Carolina",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/carocervera123/mini-enevntbrite-backend/issues"
   },
