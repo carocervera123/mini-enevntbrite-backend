@@ -2,8 +2,6 @@ import * as Tickets from '../services/ticket.service.js';
 import { AppError } from '../utils/errors.js';
 import crypto from 'crypto';
 import { env } from '../config/env.js';
-import crypto from 'crypto';
-import { env } from '../config/env.js';
 
 export async function purchase(req, res, next) {
     try {
