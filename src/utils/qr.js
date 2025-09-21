@@ -8,10 +8,10 @@ export function singTicket(ticketId) {
     return h.digest('hex');
 }
 
-export function buildQrPayliad(ticketId) {
-    return JSON.stringify({t: ticketId, s: singTicket(ticketId)})
+export function buildQrPayload(ticketId) {
+    return JSON.stringify({ t: ticketId, s: singTicket(ticketId) })
 }
 
 export async function generateQrPngBuffer(payload) {
-    return await QRCode.toBuffer(payload, { type: 'png', width: 512, margin: 1});
+    return await QRCode.toBuffer(payload, { type: 'png', width: 512, margin: 1 });
 }

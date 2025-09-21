@@ -5,9 +5,10 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import routes from './routes/index.js';
 import { env } from './config/env.js';
-//import { errorHandler, notFoundHandler } from './middlewares/auth.js';
+import { errorHandler, notFoundHandler } from './middlewares/auth.js';
 
 export function buildApp() {
+
     const app = express();
     app.use(helmet());
     app.use(cors({ origin: env.corsOrigin, credentials: true }));
@@ -15,9 +16,10 @@ export function buildApp() {
     app.use(cookieParser());
     app.use(morgan(env.nodeEnv === 'production' ? 'combined' : 'dev'));
 
+
     app.get('/health', (_req, res) => res.json({ ok: true }));
     app.use('/api', routes);
-    //app.use(notFoundHandler);
-    //app.use(errorHandler);
+    app.use(notFoundHandler);
+    app.use(errorHandler);
     return app;
 }
